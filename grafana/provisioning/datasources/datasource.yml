@@ -1,0 +1,14 @@
+apiVersion: 1
+
+datasources:
+  - name: TimescaleDB
+    type: postrges
+    url: timescaleDB:5432
+    database: ${DB_NAME:-analytics_db}
+    user: ${DB_USER:-admin}
+    secureJsonData:
+      password: ${DB_PASSWORD:-password123}
+    JsonData: 
+      sslmode: 'disable'
+      postrgesVersion: 1500
+      timescaleDB: true
